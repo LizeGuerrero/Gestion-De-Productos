@@ -1,0 +1,167 @@
+/* Estilo de la tabla */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background-color: #f5f0ff; /* Color de fondo de la tabla */
+  border-radius: 8px; /* Bordes redondeados para la tabla */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para la tabla */
+}
+
+/* Estilo de las celdas de la tabla */
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #333; /* Color del texto dentro de las celdas */
+}
+
+th {
+  background-color: #7055b0;
+  color: white; /* Color de texto de los encabezados */
+}
+
+tr:hover {
+  background-color: #eafaf4; /* Color al pasar el ratón sobre las filas */
+}
+
+/* Estilo de los botones de acción */
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:nth-child(1) {
+  background-color: #9283e5;
+  color: white;
+}
+
+button:nth-child(1):hover {
+  background-color: #4551a0;
+}
+
+button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+button:nth-child(2):hover {
+  background-color: #e53935;
+}
+
+/* Media queries para hacer la tabla responsive */
+@media (max-width: 480px) {
+  body {
+    width: 768px;
+    height: auto;
+  }  
+  table {
+      font-size: 0.9rem;
+  }
+  th, td {
+      padding: 8px;
+  }
+  button {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  table {
+      font-size: 1rem;
+  }
+  body {
+    width: 768px;
+    height: 600px;
+  }  
+  th, td {
+      padding: 10px;
+  }
+  button {
+      font-size: 0.85rem;
+      padding: 5px 9px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  table {
+      font-size: 1rem;
+  }
+  body {
+    width: auto;
+    height: 1400px;
+  }  
+  th, td {
+      padding: 12px;
+  }
+  button {
+      font-size: 0.9rem;
+      padding: 5px 10px;
+  }
+}
+
+@media (min-width: 1025px) {
+  table {
+      font-size: 1.1rem;
+  }
+  body {
+    width: auto;
+    height: auto;
+  } 
+  th, td {
+      padding: 14px;
+  }
+  button {
+      font-size: 1rem;
+      padding: 6px 12px;
+  }
+}
+
+/* Media query para la orientación horizontal de dispositivos móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  table {
+      font-size: 0.9rem;
+  }
+  th, td {
+      padding: 8px;
+  }
+  button {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+  }
+}
+
+/* Media query para soportar la preferencia de modo oscuro */
+@media (prefers-color-scheme: dark) {
+  table {
+      background-color: #2c2c2c;
+      color: #ffffff;
+  }
+  th {
+      background-color: #555;
+      color: #ffffff;
+  }
+  td {
+      color: #e0e0e0;
+  }
+  tr:hover {
+      background-color: #3e3e3e;
+  }
+  button:nth-child(1) {
+      background-color: #6055b0;
+  }
+  button:nth-child(1):hover {
+      background-color: #4c4185;
+  }
+  button:nth-child(2) {
+      background-color: #c62828;
+  }
+  button:nth-child(2):hover {
+      background-color: #b71c1c;
+  }
+}

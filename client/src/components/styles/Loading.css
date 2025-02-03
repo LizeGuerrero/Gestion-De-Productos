@@ -1,0 +1,91 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loader-item {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    list-style-type: none;
+    transition: 0.5s all ease;
+    border-radius: 50%;
+  }
+  
+  .loader-item:nth-child(1) {
+    animation: circle1 1s infinite alternate;
+    background-color: #7fd3f5;
+    animation-delay: 100ms;
+  }
+  
+  @keyframes circle1 {
+    0% {
+      transform: translateY(-60px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  
+  .loader-item:nth-child(2) {
+    animation: circle2 1s infinite alternate;
+    background-color: #49b8e5;
+    animation-delay: 200ms;
+  }
+  
+  @keyframes circle2 {
+    0% {
+      transform: translateY(-70px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  
+  .loader-item:nth-child(3) {
+    animation: circle3 1s infinite alternate;
+    background-color: #3ba2cc;
+    animation-delay: 300ms;
+  }
+  
+  @keyframes circle3 {
+    0% {
+      transform: translateY(-80px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  
+  .loader-item:nth-child(4) {
+    animation: circle4 1s infinite alternate;
+    background-color: #2c87d1;
+    animation-delay: 400ms;
+  }
+  
+  @keyframes circle4 {
+    0% {
+      transform: translateY(-90px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  
+  .loader-item:nth-child(5) {
+    animation: circle5 1s infinite alternate;
+    background-color: #436eb0;
+    animation-delay: 500ms;
+  }
+  
+  @keyframes circle5 {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  

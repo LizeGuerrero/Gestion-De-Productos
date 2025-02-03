@@ -1,0 +1,177 @@
+/* Contenedor principal de la página */
+.producto-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Contenedor del producto (imagen y detalles) */
+.producto-contenido {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px; /* Para que el contenedor no sea más grande que esto */
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la imagen del producto */
+.producto-imagen {
+  width: 40%;
+  height: 400px; /* Define una altura constante para la imagen */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.producto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la imagen se redimensione para ajustarse al contenedor sin perder su proporción */
+  object-position: center; /* Asegura que la imagen se centre si no llena todo el espacio */
+}
+
+/* Estilos para los detalles del producto */
+.producto-detalles {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producto-detalles h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.producto-precio {
+  font-size: 1.8rem;
+
+  margin-bottom: 20px;
+}
+
+.producto-detalles p {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.producto-acciones {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.producto-cantidad {
+  width: 50px;
+  text-align: center;
+}
+
+.producto-agregar {
+  padding: 10px 20px;
+  background-color: #2d92a1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.producto-agregar:hover {
+  background-color: #1d6a74;
+}
+
+/* Estilos para los productos relacionados */
+.productos-relacionados {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+
+/* Para tabletas (pantallas de entre 600px y 1024px) */
+@media (max-width: 1024px) {
+  .producto-contenido {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .producto-imagen {
+    width: 100%;
+    height: 300px;
+  }
+
+  .producto-detalles {
+    width: 100%;
+    text-align: center;
+  }
+
+  .producto-agregar {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* Para dispositivos móviles (pantallas de hasta 600px) */
+@media (max-width: 600px) {
+  .producto-contenido {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .producto-imagen {
+    width: 100%;
+    height: 250px;
+  }
+
+  .producto-detalles h1 {
+    font-size: 2rem;
+  }
+
+  .producto-precio {
+    font-size: 1.5rem;
+  }
+
+  .producto-detalles p {
+    font-size: 1rem;
+  }
+
+  .producto-acciones {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .producto-cantidad {
+    width: 40px;
+  }
+
+  .producto-agregar {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}

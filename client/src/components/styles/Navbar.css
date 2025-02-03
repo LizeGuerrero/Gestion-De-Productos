@@ -1,0 +1,318 @@
+
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1200px;
+}
+
+/* Logo */
+.logo img {
+  width: 50px; /* Tamaño de la imagen */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+
+.site-name {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #4f4f4f; /* Gris oscuro para el color base */
+  background: linear-gradient(90deg, #fafafa, #c0c0c0); /* Gradiente de grises */
+  background-clip: text; /* Propiedad estándar para aplicar el gradiente solo al texto */
+  -webkit-background-clip: text; /* Versión prefijada para compatibilidad */
+  -webkit-text-fill-color: transparent; /* Hace que el texto reciba el gradiente */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.site-name a {
+  text-decoration: none; /* Elimina la línea debajo del enlace */
+}
+
+.logo {
+  text-decoration: none; /* Elimina la línea debajo del enlace Link */
+}
+
+
+/* Menú desplegable */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.main-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
+.nav-list a:hover {
+  background-color: #333333;
+  border-radius: 4px;
+}
+
+/* Submenú */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* En pantallas grandes, el submenú se despliega hacia abajo */
+  left: 0; /* Se mantiene alineado con el item principal */
+  background-color: #444;
+  border-radius: 4px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px; /* Ancho mínimo para el submenú */
+}
+
+.dropdown li a {
+  display: block;
+  padding: 5px 15px;
+  color: #ffffff;
+}
+
+.dropdown li a:hover {
+  background-color: #333;
+}
+
+/* Menú de Géneros */
+.nav-list li:hover .dropdown {
+  display: block;
+}
+
+/* Estilos responsive */
+@media (max-width: 890px) {
+  .dropdown {
+    top: 0;
+    left: 100%; /* Submenú se abre a la derecha */
+  }
+  
+}
+
+@media (min-width: 891px) {
+  .dropdown {
+    top: 100%; /* En pantallas grandes, el submenú se abre hacia abajo */
+    left: 0;
+  }
+}
+
+/* Botón de Login */
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9274c2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #6c46a9;
+}
+
+.login-btn:active {
+  transform: scale(0.95);
+}
+
+.login-btn:focus {
+  outline: 2px solid #4c53af;
+  outline-offset: 2px;
+}
+/* Estilo para la navbar cuando está activa */
+.current {
+  border-top: 2px solid rgb(139, 74, 203);
+}
+
+/* Navbar posicionada de forma fija en la parte superior */
+.navbar {
+  position: fixed;       /* Fija la navbar al top */
+  top: 0;                /* Alinea al borde superior */
+  left: 0;               /* Alinea al borde izquierdo */
+  right: 0;              /* Alinea al borde derecho */
+  z-index: 9999;         /* Asegura que esté encima de otros elementos */
+  background: #302b63d0; /* Fondo oscuro con algo de transparencia */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombras para resaltar la navbar */
+}
+
+/* Lista de elementos en la navbar */
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: space-between;
+}
+
+.list li {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 20px;
+  color: white;
+}
+
+.list li a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid rgb(145, 101, 166);
+  border-bottom-width: 0;
+  transition: .5s ease-in-out;
+}
+
+/* Efecto al pasar el ratón sobre los enlaces */
+.list li a:hover {
+  border-bottom: 3px solid rgb(161, 131, 199);
+  border-bottom-width: 100%;
+  border-bottom-right-radius: 50%;
+  color: rgb(200, 178, 220);
+}
+
+
+
+/* Ajustes para asegurar que no haya superposición de contenido */
+body {
+  margin-top: 60px; /* Deja espacio para que el contenido no quede debajo de la navbar */
+}
+
+/* Estilos Responsive */
+@media (max-width: 890px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .main-navbar {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: #302b63d0;
+    width: 170px; /* Ajustamos el ancho del menú */
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #menu-toggle:checked ~ .main-navbar {
+    left: 0;
+  }
+
+  .login-btn {
+    margin-top: 10px;
+  }
+}
+.site-name, .logo img {
+  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+@media (max-width: 500px) {
+  .site-name {
+    font-size: 1.5rem; /* Reducir tamaño del texto */
+    padding: 10px; /* Reducir el padding si es necesario */
+  }
+
+  .logo img {
+    width: 40px; /* Reducir tamaño de la imagen */
+  }
+
+}
+
+
+@media (max-width: 500px) {
+  .main-navbar {
+    top: 65px; 
+  }
+}
+@media (max-width: 314px) {
+  .site-name {
+    font-size: 1.2rem; 
+    padding: 10px; 
+  }
+
+  .logo img {
+    width: 25px; 
+  }
+
+
+
+  .main-navbar {
+    top: 51px; 
+  }
+}
+@media (max-width: 1100px) {
+  .site-name {
+    font-size: 2.5rem; /* Reducir tamaño del texto */
+    padding: 15px; /* Ajustar el padding si es necesario */
+  }
+
+  .logo img {
+    width: 45px; /* Reducir tamaño de la imagen */
+  }
+
+  .main-navbar {
+    top: 73px; /* Ajustar la posición de la navbar si es necesario */
+  }
+
+  .list li {
+    font-size: 18px; /* Reducir el tamaño de la fuente en la lista */
+  }
+}
+@media (max-width: 970px) {
+  .site-name {
+    font-size: 2rem; /* Reducir aún más el tamaño del texto */
+    padding: 10px; /* Reducir el padding si es necesario */
+  }
+
+  .logo img {
+    width: 40px; /* Reducir tamaño de la imagen */
+  }
+
+  .main-navbar {
+    top: 65px; /* Ajustar la posición de la navbar si es necesario */
+  }
+
+  .list li {
+    font-size: 16px; /* Reducir aún más el tamaño de la fuente en la lista */
+  }
+}

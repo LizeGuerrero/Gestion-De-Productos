@@ -1,0 +1,16 @@
+h1 {
+
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(90deg, #acc9fe, #6a11cb);
+    background-clip: text; /* Propiedad estándar */
+    -webkit-background-clip: text; /* Versión prefijada */
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }

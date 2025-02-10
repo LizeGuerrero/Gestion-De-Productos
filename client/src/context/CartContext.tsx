@@ -4,7 +4,7 @@ import { Cart } from "../types/Producto";
 // Definimos el tipo del contexto
 interface CartContextType {
   cart: Cart;
-  addToCart: (productId: string) => void;
+  addToCart: (productId: string, quantity: number) => void; // Aceptar cantidad como parámetro
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -56,8 +56,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Función para agregar un producto al carrito
-  const addToCart = (productId: string) => {
+  // Función para agregar un producto al carrito con una cantidad específica
+  const addToCart = (productId: string, quantity: number) => {
     const existingItem = cart.items.find((item) => item.productId === productId);
 
     if (existingItem) {
@@ -65,14 +65,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setCart((prevCart) => ({
         ...prevCart,
         items: prevCart.items.map((item) =>
-          item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item
+          item.productId === productId ? { ...item, quantity: item.quantity + quantity } : item
         ),
       }));
     } else {
-      // Si no está en el carrito, agregarlo
+      // Si no está en el carrito, agregarlo con la cantidad especificada
       setCart((prevCart) => ({
         ...prevCart,
-        items: [...prevCart.items, { productId, quantity: 1 }],
+        items: [...prevCart.items, { productId, quantity }],
       }));
     }
   };

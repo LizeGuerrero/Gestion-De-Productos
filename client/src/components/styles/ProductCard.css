@@ -1,0 +1,114 @@
+/* Estilos para cada card de producto */
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Ancho fijo para todas las cards */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el header de la card */
+.header-card {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  /* Limitar el tamaño del texto */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Muestra "..." cuando el texto es demasiado largo */
+}
+
+.header-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Estilos para el main de la card */
+.main-card {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el texto a la izquierda */
+}
+
+.producto-image {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: contain; /* Ajusta la imagen para que se vea completa */
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa; /* Fondo para imágenes con espacio sobrante */
+}
+
+.main-card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.main-card p strong {
+  color: #333;
+}
+
+/* Estilos para el footer de la card */
+.footer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  gap: 10px; /* Espacio entre el input y el botón */
+}
+
+.cantidad-input {
+  width: 60px; /* Ancho fijo para el input de cantidad */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Evita que el texto del botón se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Muestra "..." cuando el texto es demasiado largo */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .producto-card {
+    width: 100%; /* En pantallas pequeñas, las cards ocupan el ancho completo */
+  }
+
+  .producto-image {
+    height: 150px; /* Reducir la altura de la imagen en pantallas pequeñas */
+  }
+}
+

@@ -7,17 +7,17 @@ import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import video from "../LoginAssets/video.mp4";
-import logo from "../LoginAssets/logo.png";
+import logo from "/logo.png";
 import "./styles/AuthGestor.css";
 
-// Tipado de las propiedades del componente
+
 interface AuthGestorProps {
-  onClose: () => void; // onClose es una función que no devuelve nada
+  onClose: () => void; 
 }
 
 const AuthGestor: React.FC<AuthGestorProps> = ({ onClose }) => {
-  const { login: loginContext } = useAuth(); // Accede a la función login del contexto
-  const [formType, setFormType] = useState<"login" | "register">("login"); // 'login' o 'register'
+  const { login: loginContext } = useAuth(); 
+  const [formType, setFormType] = useState<"login" | "register">("login"); 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [username, setUsername] = useState<string>("");
@@ -39,13 +39,11 @@ const AuthGestor: React.FC<AuthGestorProps> = ({ onClose }) => {
 
       alert(response.mensaje);
       if (response.token) {
-        // Guarda el token en localStorage
-        localStorage.setItem("token", response.token);
-        // Actualiza el estado de autenticación global a través del contexto
+
         loginContext(response.token);
       }
 
-      onClose(); // Cierra el modal tras éxito
+      onClose();
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message);
@@ -152,7 +150,7 @@ const AuthGestor: React.FC<AuthGestorProps> = ({ onClose }) => {
 
               {formType === "login" && (
                 <span className="auth-forgot-password">
-                  ¿Olvidaste tu contraseña? <a href="" className="auth-forgot-link">Click aquí</a>
+                  {/* ¿Olvidaste tu contraseña? <a href="" className="auth-forgot-link">Click aquí</a> */}
                 </span>
               )}
             </form>

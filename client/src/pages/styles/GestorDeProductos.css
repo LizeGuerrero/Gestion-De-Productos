@@ -1,11 +1,10 @@
-
 /* Estilos generales */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-|
+
 h1 {
   text-align: center;
   margin-bottom: 30px;
@@ -48,114 +47,6 @@ button:hover {
   gap: 20px;
   justify-content: center;
   padding: 20px;
-}
-
-/* Estilos para cada card de producto */
-.producto-card {
-  display: flex;
-  flex-direction: column;
-  width: 300px; /* Ancho fijo para todas las cards */
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.producto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para el header de la card */
-.header-card {
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-.header-card h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-/* Estilos para el main de la card */
-.main-card {
-  flex: 1;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinea el texto a la izquierda */
-}
-
-.producto-image {
-  width: 100%;
-  height: 200px; /* Altura fija para la imagen */
-  object-fit: contain; /* Ajusta la imagen para que se vea completa */
-  border-radius: 5px;
-  margin-bottom: 15px;
-  background-color: #f8f9fa; /* Fondo para imágenes con espacio sobrante */
-}
-
-.main-card p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  color: #555;
-  text-align: left; /* Alinea el texto a la izquierda */
-}
-
-.main-card p strong {
-  color: #333;
-}
-
-/* Estilos para el footer de la card */
-.footer-card {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #ddd;
-}
-
-.footer-card button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.footer-card .edit-btn {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.footer-card .edit-btn:hover {
-  background-color: #0056b3;
-}
-
-.footer-card .delete-btn {
-  background-color: #dc3545;
-  color: #fff;
-}
-
-.footer-card .delete-btn:hover {
-  background-color: #a71d2a;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .producto-card {
-      width: 100%; /* En pantallas pequeñas, las cards ocupan el ancho completo */
-  }
-
-  .producto-image {
-      height: 150px; /* Reducir la altura de la imagen en pantallas pequeñas */
-  }
 }
 
 /* Estilos para la checkbox de categorias */
@@ -270,8 +161,6 @@ select:hover {
   transform: translateY(-2px);
 }
 
-
-
 .checkbox-item label:active {
   background-color: #666;
   transform: translateY(1px);
@@ -293,13 +182,12 @@ select:hover {
 .precio-label,
 .stock-label,
 .categoria-label {
-    display: block; /* Hace que las etiquetas ocupen toda la línea */
-    font-size: 1rem; /* Tamaño de fuente estándar */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center; /* Texto centrado */
-    color: #333; /* Color de texto oscuro */
+  display: block; /* Hace que las etiquetas ocupen toda la línea */
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center; /* Texto centrado */
+  color: #333; /* Color de texto oscuro */
 }
-
 
 /* Estilos para el selector de categorías */
 .categoria-selector {
@@ -363,4 +251,19 @@ select:hover {
 .categoria-item.selected {
   background-color: #e3f2fd;
   font-weight: bold;
+}
+
+
+
+
+
+/* Oscurecimiento en el lado derecho */
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px; /* Ancho del oscurecimiento */
+  background: linear-gradient(to right, transparent, #f8f9fa 80%);
+  pointer-events: none; /* Permite hacer hover sobre el texto */
 }

@@ -60,3 +60,7 @@ export interface CartItem {
   export interface CartProduct extends Producto {
     quantity: number;
   }
+  export interface ProductoCarrito extends Producto {
+    cantidad: number;
+    _id: string;
+  }

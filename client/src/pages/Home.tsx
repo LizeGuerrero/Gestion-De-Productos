@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { getProductos } from "../services/ProductoService";
 import "./styles/Home.css";
 import { Producto } from "../types/Producto";
-import ProductoCard from "../components/ProductoCard"; // Importamos el componente ProductoCard
-import Loader from "../components/Loading"; // Importamos el Loader
+import ProductoCard from "../components/ProductoCard";
+import Loader from "../components/Loading";
 
 const Home = () => {
   const [productos, setProductos] = useState<Producto[]>([]);
@@ -40,7 +40,6 @@ const Home = () => {
             <ProductoCard
               key={producto._id}
               producto={producto}
-              onAddToCart={() => {}}
               /* onBuyNow={() => {}} */
               onClick={() => handleProductClick(producto)}
             />

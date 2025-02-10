@@ -5,12 +5,15 @@ import { Producto } from "../types/Producto";
 import ProductoCard from "../components/ProductoCard";
 import Loader from "../components/Loading";
 import "./styles/ProductoPage.css";
+import { useCart } from "../context/CartContext"; // Importar el contexto del carrito
 
 const ProductoPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [producto, setProducto] = useState<Producto | null>(null);
   const [productosRelacionados, setProductosRelacionados] = useState<Producto[]>([]);
+  const [cantidad, setCantidad] = useState(1); // Estado para la cantidad
+  const { addToCart } = useCart(); // Usar el contexto del carrito
 
   useEffect(() => {
     const fetchProducto = async (id: string) => {
@@ -35,7 +38,7 @@ const ProductoPage = () => {
     if (id) {
       fetchProducto(id);
     }
-  }, [id]); // Solo dependemos de "id", ya que la función ahora está dentro de este efecto
+  }, [id]);
 
   if (!producto) {
     return <Loader />;
@@ -43,6 +46,13 @@ const ProductoPage = () => {
 
   const formatPrice = (price: number) => {
     return price.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
+
+  // Función para manejar el evento de agregar al carrito
+  const handleAgregarAlCarrito = () => {
+    if (producto) {
+      addToCart(producto._id!, cantidad); // Agregar el producto al carrito con la cantidad seleccionada
+    }
   };
 
   return (
@@ -57,10 +67,18 @@ const ProductoPage = () => {
           <p>{producto.descripcion}</p>
           <p><strong>Marca:</strong> {producto.marca}</p>
           <p><strong>Categorías:</strong> {producto.categoria.map(cat => cat.nombre_categoria).join(", ")}</p>
-          {/* <p><strong>Stock:</strong> {producto.stock > 0 ? `${producto.stock} disponibles` : "Agotado"}</p> */}
           <div className="producto-acciones">
-            <input type="number" defaultValue={1} min={1} max={producto.stock} className="producto-cantidad" />
-            <button className="producto-agregar">Agregar al carrito</button>
+            <input
+              type="number"
+              value={cantidad}
+              min={1}
+              max={producto.stock}
+              className="producto-cantidad"
+              onChange={(e) => setCantidad(Number(e.target.value))} // Actualizar la cantidad
+            />
+            <button className="producto-agregar" onClick={handleAgregarAlCarrito}>
+              Agregar al carrito
+            </button>
           </div>
         </div>
       </div>
@@ -75,8 +93,6 @@ const ProductoPage = () => {
               <ProductoCard
                 key={prod._id}
                 producto={prod}
-                onAddToCart={() => {}}
-                onBuyNow={() => {}}
                 onClick={() => navigate(`/producto/${prod._id}`)}
               />
             ))
